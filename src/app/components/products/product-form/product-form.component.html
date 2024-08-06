@@ -1,0 +1,61 @@
+<div class="flex justify-center">
+    <form [formGroup]="productForm" style="width: 900px;" class="shadow border bg-white p-8">
+        @if(product){
+        <p class="text-xl font-semibold mb-4">Update Product</p>
+        }@else {
+            <p class="text-xl font-semibold mb-4">Add Product</p>
+        }
+
+
+        <div class="flex flex-wrap">
+            <div class="w-full">
+                <mat-label>Product Name</mat-label>
+                <mat-form-field appearance="outline" class="w-full">
+                    <input type="text" matInput formControlName="name"/>
+                </mat-form-field>
+            </div>
+            <div class="w-full">
+                <mat-label>Details</mat-label>
+                <mat-form-field appearance="outline" class="w-full">
+                    <input type="text" matInput formControlName="details"/>
+                </mat-form-field>
+            </div>
+            <div class="w-full">
+                <mat-label>Brand Name</mat-label>
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-select type="text" matInput formControlName="brandId">
+                        @for (i of brands; track $index) {
+                            <mat-option [value]="i.id">{{i.name}}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="w-full">
+                <mat-label>Purchase Price</mat-label>
+                <mat-form-field appearance="outline" class="w-full">
+                    <input type="number" matInput formControlName="purchasePrice"/>
+                </mat-form-field>
+            </div>
+            <div class="w-full">
+                <mat-label>Sale Price</mat-label>
+                <mat-form-field appearance="outline" class="w-full">
+                    <input type="number" matInput formControlName="salePrice"/>
+                </mat-form-field>
+            </div>
+            <div class="w-full">
+                <mat-label>Stock</mat-label>
+                <mat-form-field appearance="outline" class="w-full">
+                    <input type="number" matInput formControlName="stock"/>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="w-full justify-center">
+            @if(product){
+            <button mat-flat-button (click)="updateProduct()">Update</button>
+            }@else {
+                <button mat-flat-button (click)="addProduct()">Add</button>
+            }
+
+        </div>
+    </form>
+</div>

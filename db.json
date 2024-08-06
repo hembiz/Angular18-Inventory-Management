@@ -1,0 +1,109 @@
+{
+  "brands": [
+    {
+      "id": "dd5a",
+      "name": "Asus"
+    },
+    {
+      "id": "c174",
+      "name": "Dell"
+    },
+    {
+      "id": "e624",
+      "name": "Apple"
+    },
+    {
+      "id": "618f",
+      "name": "LG"
+    },
+    {
+      "id": "752f",
+      "name": "HP"
+    }
+  ],
+  "products": [
+    {
+      "id": "3abe",
+      "name": "Tuf Gamming Laptop",
+      "details": "Model: F17",
+      "brandId": "dd5a",
+      "purchasePrice": 70500,
+      "salePrice": 88900,
+      "stock": 4
+    },
+    {
+      "id": "0c6f",
+      "name": "iPhone 15",
+      "details": "128 GB",
+      "brandId": "e624",
+      "purchasePrice": 74900,
+      "salePrice": 84900,
+      "stock": 0
+    },
+    {
+      "name": "LG Webcam 1080p",
+      "details": "Model: LG-Cam-1080",
+      "brandId": "618f",
+      "purchasePrice": 1200,
+      "salePrice": 1850,
+      "stock": 40,
+      "id": "151c"
+    }
+  ],
+  "orders": [
+    {
+      "orderNo": "505",
+      "productId": "0c6f",
+      "qty": 4,
+      "salesPrice": 84900,
+      "discount": 25000,
+      "totalAmount": 314600,
+      "id": "8314"
+    },
+    {
+      "id": "22bd",
+      "orderNo": "a1",
+      "productId": "3abe",
+      "qty": 1,
+      "salesPrice": 88900,
+      "discount": null,
+      "totalAmount": 88900
+    },
+    {
+      "orderNo": "1q",
+      "productId": "0c6f",
+      "qty": 2,
+      "salesPrice": 84900,
+      "discount": 1500,
+      "totalAmount": 168300,
+      "id": "60a4"
+    },
+    {
+      "id": "7f1c",
+      "orderNo": "303",
+      "productId": "151c",
+      "qty": 10,
+      "salesPrice": 1850,
+      "discount": 500,
+      "totalAmount": 18000
+    },
+    {
+      "id": "040f",
+      "orderNo": "s",
+      "productId": "0c6f",
+      "qty": 2,
+      "salesPrice": 84900,
+      "discount": null,
+      "totalAmount": 169800
+    },
+    {
+      "id": "a725",
+      "orderNo": "222",
+      "productId": "0c6f",
+      "qty": 2,
+      "salesPrice": 84900,
+      "discount": null,
+      "totalAmount": 169800
+    }
+  ]
+}

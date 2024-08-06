@@ -1,0 +1,67 @@
+<div class="flex justify-center">
+    <form [formGroup]="orderForm" style="width: 900px;" class="shadow border bg-white p-8">
+        @if(order){
+            <p class="text-xl font-semibold mb-4">Update Order</p>
+            }@else {
+                <p class="text-xl font-semibold mb-4">Add Order</p>
+            }
+        <div class="flex flex-wrap">
+            <div class="w-full">
+                <mat-label>Order No.</mat-label>
+                <mat-form-field appearance="outline" class="w-full">
+                    <input type="text" matInput formControlName="orderNo"/>
+                </mat-form-field>
+            </div>
+
+            <div class="w-full">
+                <mat-label>Product</mat-label>
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-select type="text" matInput formControlName="productId" (valueChange)="productSelected($event)">
+                        @for (i of products; track $index) {
+                            <mat-option [value]="i.id">{{i.name}} <span style="color: blue;">(Stock: {{i.stock}})</span></mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="w-4/12 pr-2">
+                <mat-label>Qty.</mat-label>
+                <mat-form-field appearance="outline" class="w-full">
+                    <input type="number" matInput formControlName="qty"/>
+                </mat-form-field>
+            </div>
+
+            <div class="w-4/12 pr-2">
+                <mat-label>Sale Price</mat-label>
+                <mat-form-field appearance="outline" class="w-full">
+                    <input type="number" readonly matInput formControlName="salesPrice"/>
+                </mat-form-field>
+            </div>
+
+            <div class="w-4/12">
+                <mat-label>Discount</mat-label>
+                <mat-form-field appearance="outline" class="w-full">
+                    <input type="number" matInput formControlName="discount"/>
+                </mat-form-field>
+            </div>
+
+            <div class="w-full">
+                <mat-label>Total Amount</mat-label>
+                <mat-form-field appearance="outline" class="w-full">
+                    <input type="number" readonly  matInput formControlName="totalAmount"/>
+                </mat-form-field>
+            </div>
+
+
+        </div>
+        <div class="w-full justify-center">
+            @if(order){
+            <button mat-flat-button (click)="updateOrder()">Update</button>
+            }@else {
+                <button mat-flat-button (click)="addOrder()">Add</button>
+            }
+        </div>
+
+    </form>
+
+</div>
